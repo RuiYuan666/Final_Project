@@ -175,8 +175,7 @@ def main():
     all_records = stacked
 
     # 按日期升序排列
-    # 按日期升序排列（规范化后排序，避免字符串比较陷阱）
-    def _norm(s):
+       def _norm(s):
         parts = s.strip().split('-')
         return f"{int(parts[0]):04d}-{int(parts[1]):02d}-{int(parts[2]):02d}"
     all_records.sort(key=lambda r: _norm(r['日期']))

@@ -9,7 +9,7 @@ df = pd.read_csv("CRC_price_C.csv", parse_dates=["日期"], encoding="utf-8-sig"
 # 按日期排序（必须）
 df = df.sort_values("日期").reset_index(drop=True)
 
-# ===================== 【关键修改】去除最高价或最低价为0的记录 =====================
+# ===================== 去除最高价或最低价为0的记录 =====================
 print("清洗前数据行数：", len(df))
 df = df[(df["最高价（元/吨）"] > 0) & (df["最低价（元/吨）"] > 0)].copy()
 df = df.reset_index(drop=True)

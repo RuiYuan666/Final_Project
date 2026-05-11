@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-CRC全国碳市场交易结算信息日报 爬虫 v2
+CRC全国碳市场交易结算信息日报
 从 https://www.chinacrc.net.cn 采集2026年至今所有有成交量的记录
 """
 import os, re, time, csv, requests

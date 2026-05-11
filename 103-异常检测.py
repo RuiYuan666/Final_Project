@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
-# 南京信息工程大学
 # 碳市场异常检测代码【适配最新纯净表头·终版】
 # 适配原始列名：日期、配额类型、开盘价、最高价、最低价、收盘价、涨幅、日成交量、日成交额、交易方式
-# 修复：删除所有带括号旧列名，完全匹配预处理输出字段，零报错
-# 算法：3σ准则 + 孤立森林，完全匹配论文3.4、3.5
+# 算法：3σ准则 + 孤立森林
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -53,7 +51,7 @@ for trade_type in transaction_type_list:
         anomaly_flag = np.where((df_sub[indicator] < lower_threshold) | (df_sub[indicator] > upper_threshold), 1, 0)
         df_sub[f"{indicator}_3σ异常"] = anomaly_flag
 
-        # 【核心修复】使用英文命名图片，杜绝Windows中文括号报错
+        # 使用英文命名图片
         simple_trade_name = trade_map[trade_type]
         simple_ind_name = indicator_map[indicator]
         save_name = f"3sigma_{simple_trade_name}_{simple_ind_name}.png"
@@ -78,8 +76,8 @@ for trade_type in transaction_type_list:
         plt.savefig(save_name, dpi=300)
         plt.close()
 
-    # ============== 2.2 孤立森林（同步无括号标准化特征列名） ==============
-    # 严格7维特征、完全匹配预处理生成字段，无任何旧括号字段
+    # ============== 2.2 孤立森林 ==============
+    # 严格7维特征
     feature_cols_scaled = [
         "开盘价_标准化",
         "收盘价_标准化",
@@ -98,11 +96,11 @@ for trade_type in transaction_type_list:
     isolation_anomaly = np.where(predict_result == -1, 1, 0)
     df_sub["孤立森林_异常标记"] = isolation_anomaly
 
-    # 孤立森林图片同样改名修复
+    # 孤立森林图片
     simple_trade_name = trade_map[trade_type]
     save_name_forest = f"IsolationForest_{simple_trade_name}.png"
 
-    # 绘制孤立森林异常图（适配无括号收盘价）
+    # 绘制孤立森林异常图
     plt.figure(figsize=(16, 6))
     plt.plot(df_sub["日期"], df_sub["收盘价"], color="#2E86AB", linewidth=1.2, label="收盘价")
     forest_anomaly = df_sub[df_sub["孤立森林_异常标记"] == 1]
@@ -140,7 +138,4 @@ print(f"涨幅3σ异常数量：{(df_all['涨幅_3σ异常']==1).sum()}")
 print(f"日均价3σ异常数量：{(df_all['日均价_3σ异常']==1).sum()}")
 print(f"孤立森林异常数量：{(df_all['孤立森林_异常标记']==1).sum()}")
 print(f"最终留存异常样本：{len(df_anomaly_only)}")
-print("✅ 完全适配无括号原始表头，字段一一对应")
-print("✅ 废弃换手指标已永久删除")
-print("✅ 毕业论文定稿专用、零报错")
 print("=============================================")
