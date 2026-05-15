@@ -1,0 +1,10 @@
+﻿date,trading_variety,trading_type,close_price_cny_ton,highest_price_cny_ton,lowest_price_cny_ton,volume_ton,amount_cny,close_price_cny_ton_3sigma_anomaly,daily_avg_price_cny_3sigma_anomaly,price_change_ratio_3sigma_anomaly,combined_3sigma_anomaly,isolation_forest_anomaly,final_anomaly
+2026-01-06,CEA,Auction,74.63,74.63,74.63,5316.0,378510.0,0,1,0,1,1,1
+2026-01-07,CEA,Block,77.97,79.19,74.0,3046405.0,229982688.0,0,0,0,0,1,1
+2026-01-14,CEA,Auction,72.5,72.5,72.5,13700.0,993250.0,1,1,0,1,1,1
+2026-01-14,CEA,Block,72.5,72.5,72.5,572000.0,35780000.0,0,0,0,0,1,1
+2026-01-15,CEA,Block,78.5,78.5,78.5,100000.0,6800000.0,0,0,1,1,0,1
+2026-01-20,CEA,Auction,73.0,73.0,73.0,51643.0,3769939.0,0,0,1,1,1,1
+2026-01-20,CEA,Block,73.0,73.0,73.0,200000.0,13800000.0,0,0,0,0,1,1
+2026-03-19,CEA,Auction,80.18,82.0,80.0,471056.0,37769022.5,0,0,0,0,1,1
+2026-03-30,CEA,Block,79.91,80.0,79.6,280000.0,15680000.0,0,1,0,1,0,1

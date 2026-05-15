@@ -1,0 +1,10 @@
+﻿date,trading_variety,trading_type,close_price_cny_ton,highest_price_cny_ton,lowest_price_cny_ton,volume_ton,amount_cny,close_price_cny_ton_3sigma_anomaly,daily_avg_price_cny_3sigma_anomaly,price_change_ratio_3sigma_anomaly,combined_3sigma_anomaly,isolation_forest_anomaly,final_anomaly
+2026-1-6,CEA,Auction,74.63,74.63,74.63,5316,378510,0,1,0,1,1,1
+2026-1-7,CEA,Block,77.97,79.19,74,3046405,229982688,0,0,0,0,1,1
+2026-1-13,CEA,Block,78.31,0,0,1070000,67129000,0,0,0,0,1,1
+2026-1-14,CEA,Block,72.5,72.5,72.5,572000,35780000,1,0,0,1,1,1
+2026-1-14,CEA,Auction,72.5,72.5,72.5,13700,993250,1,1,0,1,1,1
+2026-1-15,CEA,Block,78.5,78.5,78.5,100000,6800000,0,0,1,1,0,1
+2026-1-20,CEA,Auction,73,73,73,51643,3769939,0,0,1,1,1,1
+2026-3-19,CEA,Auction,80.18,82,80,471056,37769022.5,0,0,0,0,1,1
+2026-3-30,CEA,Block,79.91,80,79.6,280000,15680000,0,1,0,1,0,1
